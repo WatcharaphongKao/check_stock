@@ -1,0 +1,117 @@
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               8.0.30 - MySQL Community Server - GPL
+-- Server OS:                    Win64
+-- HeidiSQL Version:             12.1.0.6537
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+-- Dumping database structure for check_stock
+CREATE DATABASE IF NOT EXISTS `check_stock` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `check_stock`;
+
+-- Dumping structure for table check_stock.fg
+CREATE TABLE IF NOT EXISTS `fg` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `pallet` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `box_no` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `part` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `lot` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `bin` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `qty` int DEFAULT NULL,
+  `checked` bit(1) DEFAULT b'0',
+  `month_stock` int DEFAULT NULL,
+  `year_stock` int DEFAULT NULL,
+  `date_checked` datetime DEFAULT NULL,
+  `created_by` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `updated_by` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `unique_fg` (`box_no`)
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table check_stock.fg: ~40 rows (approximately)
+DELETE FROM `fg`;
+INSERT INTO `fg` (`id`, `pallet`, `box_no`, `part`, `lot`, `description`, `bin`, `qty`, `checked`, `month_stock`, `year_stock`, `date_checked`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
+	(1, 'A241203295', 'A24120600020', 'FG-A100SW40FJ-20HVN', '3F2400016', 'COUNT 100 SW 40 ENDS (H)', 'G1FG01', 20, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 06:48:47', NULL),
+	(2, 'A241203295', 'A24120600008', 'FG-A100SW40FJ-20HVN', '3F2400016', 'COUNT 100 SW 40 ENDS (H)', 'G1FG01', 20, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 06:48:47', NULL),
+	(3, 'A241203295', 'A24120600019', 'FG-A100SW40FJ-20HVN', '3F2400016', 'COUNT 100 SW 40 ENDS (H)', 'G1FG01', 20, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 06:48:47', NULL),
+	(4, 'A241203295', 'A24120600005', 'FG-A100SW40FJ-20HVN', '3F2400016', 'COUNT 100 SW 40 ENDS (H)', 'G1FG01', 20, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 06:48:47', NULL),
+	(5, 'A241203295', 'A24120600013', 'FG-A100SW40FJ-20HVN', '3F2400016', 'COUNT 100 SW 40 ENDS (H)', 'G1FG01', 20, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 06:48:47', NULL),
+	(6, 'A241203295', 'A24120600006', 'FG-A100SW40FJ-20HVN', '3F2400016', 'COUNT 100 SW 40 ENDS (H)', 'G1FG01', 20, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 06:48:47', NULL),
+	(7, 'A241203295', 'A24120600016', 'FG-A100SW40FJ-20HVN', '3F2400016', 'COUNT 100 SW 40 ENDS (H)', 'G1FG01', 20, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 06:48:47', NULL),
+	(8, 'A241203295', 'A24120600004', 'FG-A100SW40FJ-20HVN', '3F2400016', 'COUNT 100 SW 40 ENDS (H)', 'G1FG01', 20, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 06:48:47', NULL),
+	(9, 'A241203295', 'A24120600011', 'FG-A100SW40FJ-20HVN', '3F2400016', 'COUNT 100 SW 40 ENDS (H)', 'G1FG01', 20, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 06:48:47', NULL),
+	(10, 'A241203295', 'A24120600001', 'FG-A100SW40FJ-20HVN', '3F2400016', 'COUNT 100 SW 40 ENDS (H)', 'G1FG01', 20, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 06:48:47', NULL),
+	(11, 'A241203295', 'A24120600010', 'FG-A100SW40FJ-20HVN', '3F2400016', 'COUNT 100 SW 40 ENDS (H)', 'G1FG01', 20, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 06:48:47', NULL),
+	(12, 'A241203295', 'A24120600017', 'FG-A100SW40FJ-20HVN', '3F2400016', 'COUNT 100 SW 40 ENDS (H)', 'G1FG01', 20, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 06:48:47', NULL),
+	(13, 'A241203295', 'A24120600015', 'FG-A100SW40FJ-20HVN', '3F2400016', 'COUNT 100 SW 40 ENDS (H)', 'G1FG01', 20, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 06:48:47', NULL),
+	(14, 'A241203295', 'A24120600018', 'FG-A100SW40FJ-20HVN', '3F2400016', 'COUNT 100 SW 40 ENDS (H)', 'G1FG01', 20, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 06:48:47', NULL),
+	(15, 'A241203295', 'A24120600003', 'FG-A100SW40FJ-20HVN', '3F2400016', 'COUNT 100 SW 40 ENDS (H)', 'G1FG01', 20, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 06:48:47', NULL),
+	(16, 'A241203295', 'A24120600012', 'FG-A100SW40FJ-20HVN', '3F2400016', 'COUNT 100 SW 40 ENDS (H)', 'G1FG01', 20, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 06:48:47', NULL),
+	(17, 'A241203295', 'A24120600002', 'FG-A100SW40FJ-20HVN', '3F2400016', 'COUNT 100 SW 40 ENDS (H)', 'G1FG01', 20, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 06:48:47', NULL),
+	(18, 'A241203295', 'A24120600007', 'FG-A100SW40FJ-20HVN', '3F2400016', 'COUNT 100 SW 40 ENDS (H)', 'G1FG01', 20, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 06:48:47', NULL),
+	(19, 'A241203295', 'A24120600014', 'FG-A100SW40FJ-20HVN', '3F2400016', 'COUNT 100 SW 40 ENDS (H)', 'G1FG01', 20, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 06:48:47', NULL),
+	(20, 'A241203295', 'A24120600009', 'FG-A100SW40FJ-20HVN', '3F2400016', 'COUNT 100 SW 40 ENDS (H)', 'G1FG01', 20, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 06:48:47', NULL),
+	(41, 'A241203296', 'A24120900221', 'FG-A46SW40CB-27HVN', '3I2400063', 'COUNT 46 SW 40 ENDS (H)', 'G1FG01', 27, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 08:54:06', NULL),
+	(42, 'A241203296', 'A24120900219', 'FG-A46SW40CB-27HVN', '3I2400063', 'COUNT 46 SW 40 ENDS (H)', 'G1FG01', 27, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 08:54:06', NULL),
+	(43, 'A241203296', 'A24120900215', 'FG-A46SW40CB-27HVN', '3I2400063', 'COUNT 46 SW 40 ENDS (H)', 'G1FG01', 27, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 08:54:06', NULL),
+	(44, 'A241203296', 'A24120900228', 'FG-A46SW40CB-27HVN', '3I2400063', 'COUNT 46 SW 40 ENDS (H)', 'G1FG01', 27, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 08:54:06', NULL),
+	(45, 'A241203296', 'A24120900233', 'FG-A46SW40CB-27HVN', '3I2400063', 'COUNT 46 SW 40 ENDS (H)', 'G1FG01', 27, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 08:54:06', NULL),
+	(46, 'A241203296', 'A24120900231', 'FG-A46SW40CB-27HVN', '3I2400063', 'COUNT 46 SW 40 ENDS (H)', 'G1FG01', 27, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 08:54:06', NULL),
+	(47, 'A241203296', 'A24120900227', 'FG-A46SW40CB-27HVN', '3I2400063', 'COUNT 46 SW 40 ENDS (H)', 'G1FG01', 27, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 08:54:06', NULL),
+	(48, 'A241203296', 'A24120900225', 'FG-A46SW40CB-27HVN', '3I2400063', 'COUNT 46 SW 40 ENDS (H)', 'G1FG01', 27, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 08:54:06', NULL),
+	(49, 'A241203296', 'A24120900222', 'FG-A46SW40CB-27HVN', '3I2400063', 'COUNT 46 SW 40 ENDS (H)', 'G1FG01', 27, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 08:54:06', NULL),
+	(50, 'A241203296', 'A24120900218', 'FG-A46SW40CB-27HVN', '3I2400063', 'COUNT 46 SW 40 ENDS (H)', 'G1FG01', 27, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 08:54:06', NULL),
+	(51, 'A241203296', 'A24120900214', 'FG-A46SW40CB-27HVN', '3I2400063', 'COUNT 46 SW 40 ENDS (H)', 'G1FG01', 27, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 08:54:06', NULL),
+	(52, 'A241203296', 'A24120900223', 'FG-A46SW40CB-27HVN', '3I2400063', 'COUNT 46 SW 40 ENDS (H)', 'G1FG01', 27, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 08:54:06', NULL),
+	(53, 'A241203296', 'A24120900224', 'FG-A46SW40CB-27HVN', '3I2400063', 'COUNT 46 SW 40 ENDS (H)', 'G1FG01', 27, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 08:54:06', NULL),
+	(54, 'A241203296', 'A24120900230', 'FG-A46SW40CB-27HVN', '3I2400063', 'COUNT 46 SW 40 ENDS (H)', 'G1FG01', 27, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 08:54:06', NULL),
+	(55, 'A241203296', 'A24120900232', 'FG-A46SW40CB-27HVN', '3I2400063', 'COUNT 46 SW 40 ENDS (H)', 'G1FG01', 27, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 08:54:06', NULL),
+	(56, 'A241203296', 'A24120900216', 'FG-A46SW40CB-27HVN', '3I2400063', 'COUNT 46 SW 40 ENDS (H)', 'G1FG01', 27, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 08:54:06', NULL),
+	(57, 'A241203296', 'A24120900229', 'FG-A46SW40CB-27HVN', '3I2400063', 'COUNT 46 SW 40 ENDS (H)', 'G1FG01', 27, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 08:54:06', NULL),
+	(58, 'A241203296', 'A24120900220', 'FG-A46SW40CB-27HVN', '3I2400063', 'COUNT 46 SW 40 ENDS (H)', 'G1FG01', 27, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 08:54:06', NULL),
+	(59, 'A241203296', 'A24120900226', 'FG-A46SW40CB-27HVN', '3I2400063', 'COUNT 46 SW 40 ENDS (H)', 'G1FG01', 27, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 08:54:06', NULL),
+	(60, 'A241203296', 'A24120900217', 'FG-A46SW40CB-27HVN', '3I2400063', 'COUNT 46 SW 40 ENDS (H)', 'G1FG01', 27, b'1', 12, 2024, NULL, 'watcharaphong', NULL, '2024-12-13 08:54:06', NULL);
+
+-- Dumping structure for table check_stock.fg_past
+CREATE TABLE IF NOT EXISTS `fg_past` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `pallet` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `box_no` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `part` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `lot` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `bin` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `qty` int DEFAULT NULL,
+  `checked` bit(1) DEFAULT b'0',
+  `month_stock` int DEFAULT NULL,
+  `year_stock` int DEFAULT NULL,
+  `date_checked` datetime DEFAULT NULL,
+  `created_by` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `updated_by` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `unique_fg` (`box_no`)
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table check_stock.fg_past: ~0 rows (approximately)
+DELETE FROM `fg_past`;
+
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
